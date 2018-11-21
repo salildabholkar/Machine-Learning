@@ -7,6 +7,7 @@ Self practice for implementing basic machine learning algorithms using only
 * [Naive Bayes](code/naive_bayes.py)
 * [K-NN](code/knn.py)
 * [Linear Regression](code/linear_regression.py)
+* [Logistic Regression](code/logistic_regression.py)
 
 ## Running these scripts
 

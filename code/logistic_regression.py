@@ -1,12 +1,13 @@
 from autograd import numpy, grad
 
 from utils.CommonSetup import CommonSetup
-from utils.helpers import mean_squared_error
+from utils.helpers import binary_crossentropy
+
 numpy.random.seed(5)
 
 
-class LinearRegression(CommonSetup):
-    def __init__(self, lr=0.01, max_iters=5000, C=0.03, tolerance=0.0001):
+class LogisticRegression(CommonSetup):
+    def __init__(self, lr=0.01, max_iters=2000, C=0.03, tolerance=0.0001):
         self.C = C
         self.tolerance = tolerance
         self.lr = lr
@@ -15,17 +16,18 @@ class LinearRegression(CommonSetup):
         self.theta = []
         self.n_samples, self.n_features = None, None
 
-    def __mse_loss(self, w):
-        loss = mean_squared_error(self.y, numpy.dot(self.X, w))
+    def __bc_loss(self, w):
+        sigmoid = lambda x: 0.5 * (numpy.tanh(x) + 1)
+        loss = binary_crossentropy(self.y, sigmoid(numpy.dot(self.X, w)))
         return self.__with_penalty(loss, w)
 
     def __with_penalty(self, loss, w):
-        loss += self.C * numpy.abs(w[1:]).sum()
+        loss += (0.5 * self.C) * (w[1:] ** 2).sum() ## L2 loss
         return loss
 
     def __cost(self, X, y, theta):
         prediction = X.dot(theta)
-        error = mean_squared_error(y, prediction)
+        error = binary_crossentropy(y, prediction)
         return error
 
     def fit(self, X, y=None):
@@ -44,13 +46,14 @@ class LinearRegression(CommonSetup):
 
     def _predict(self, X=None):
         X = self.__add_intercept(X)
-        return X.dot(self.theta)
+        sigmoid = lambda x: 0.5 * (numpy.tanh(x) + 1)
+        return sigmoid(X.dot(self.theta))
 
     def __gradient_descent(self):
         theta = self.theta
         errors = [self.__cost(self.X, self.y, theta)]
         # derivative of the loss
-        cost_d = grad(self.__mse_loss)
+        cost_d = grad(self.__bc_loss)
         for i in range(1, self.max_iters + 1):
             delta = cost_d(theta)
             theta -= self.lr * delta

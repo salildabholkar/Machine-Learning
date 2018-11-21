@@ -1,12 +1,17 @@
 from init.kmeans import kmeans_init
 from init.naive_bayes import naive_bayes_init
 from init.knn import knn_init
+from init.linear_regression import linear_regression_init
+from init.logistic_regression import logistic_regression_init
+
 
 def wizard():
     algos = [
         ('K-Means', kmeans_init),
         ('Naive Bayes', naive_bayes_init),
-        ('K-NN', knn_init)
+        ('K-NN', knn_init),
+        ('Linear Regression', linear_regression_init),
+        ('Logistic Regression', logistic_regression_init),
     ]
     print('--------- Menu -----------\n')
     for i, names in enumerate(algos):
@@ -20,6 +25,7 @@ def wizard():
         return
 
     algos[a][1]()
+
 
 if __name__ == '__main__':
     wizard()
