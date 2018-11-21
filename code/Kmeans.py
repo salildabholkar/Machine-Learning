@@ -12,6 +12,7 @@ class KMeans(CommonSetup):
 
     # K : The number of clusters into which the dataset is partitioned.
     def __init__(self, K = 5):
+        print('Starting KMeans algorithm')
         self.K = K
         self.clusters = [[] for _ in range(self.K)]
         self.centroids = []
