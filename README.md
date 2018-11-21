@@ -4,6 +4,7 @@ Self practice for basic machine learning algorithms using
 
 ## Currently implemented:
 * [K-Means](code/Kmeans.py)
+* [Naive Bayes](code/naive_bayes.py)
 
 ## Running these scripts
 
