@@ -12,7 +12,11 @@ Clone the project to your local machine using:
 
     git@github.com:salildabholkar/Machine-Learning.git
 
-### Run any script:
+### Requirements
+* python 3
+* pip 3
+
+### Run any script through wizard:
 The root init file contains an interactive wizard to
 run any script of your choice
 
@@ -20,4 +24,4 @@ To run the root script:
 
     cd Machine-Learning
     pip install -r frozen-requirements.txt
-    python -m wizard
+    python wizard

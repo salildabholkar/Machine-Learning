@@ -8,7 +8,7 @@ def kmeans_init():
     X, y = make_blobs(centers = 4, n_samples = 5, n_features=2,
                       shuffle = True, random_state = 42)
 
-    print('Initial Data:')
+    print('Data to cluster:')
     print(X, '\n')
     clusters = len(np.unique(y))
     k = KMeans(K = clusters)
