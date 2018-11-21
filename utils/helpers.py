@@ -19,3 +19,11 @@ def softmax(z):
     # Avoid numerical overflow by removing max
     e = np.exp(z - np.amax(z, axis=1, keepdims=True))
     return e / np.sum(e, axis=1, keepdims=True)
+
+
+def classification_error(actual, predicted):
+    return (actual != predicted).sum() / float(actual.shape[0])
+
+
+def accuracy(actual, predicted):
+    return 1.0 - classification_error(actual, predicted)

@@ -1,10 +1,12 @@
 from init.kmeans import kmeans_init
 from init.naive_bayes import naive_bayes_init
+from init.knn import knn_init
 
 def wizard():
     algos = [
         ('K-Means', kmeans_init),
-        ('Naive Bayes', naive_bayes_init)
+        ('Naive Bayes', naive_bayes_init),
+        ('K-NN', knn_init)
     ]
     print('--------- Menu -----------\n')
     for i, names in enumerate(algos):
