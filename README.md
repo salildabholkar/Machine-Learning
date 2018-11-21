@@ -1,11 +1,12 @@
 # Machine Learning Practice
 Self practice for implementing basic machine learning algorithms using only
-`numpy` and `scikit`
+`numpy`, `autograd`, and `scikit`
 
 ## Currently implemented:
 * [K-Means](code/Kmeans.py)
 * [Naive Bayes](code/naive_bayes.py)
 * [K-NN](code/knn.py)
+* [Linear Regression](code/linear_regression.py)
 
 ## Running these scripts
 
@@ -21,7 +22,7 @@ Clone the project to your local machine using:
 ### Run through wizard:
 Make sure `python 3` is being used by doing `python --version`
 
-The root init file contains an interactive wizard to
+The wizard directory contains an interactive wizard to
 run any script of your choice
 
 To run the root script:

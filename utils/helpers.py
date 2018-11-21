@@ -1,4 +1,4 @@
-import numpy as np
+import autograd.numpy as np
 import math
 
 
@@ -27,3 +27,17 @@ def classification_error(actual, predicted):
 
 def accuracy(actual, predicted):
     return 1.0 - classification_error(actual, predicted)
+
+
+def squared_error(actual, predicted):
+    return (actual - predicted) ** 2
+
+
+def mean_squared_error(actual, predicted):
+    return np.mean(squared_error(actual, predicted))
+
+
+def binary_crossentropy(actual, predicted):
+    predicted = np.clip(predicted, 1e-15, 1 - 1e-15)
+    return np.mean(-np.sum(actual * np.log(predicted) +
+                           (1 - actual) * np.log(1 - predicted)))
