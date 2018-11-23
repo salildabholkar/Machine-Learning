@@ -8,6 +8,7 @@ Self practice for implementing basic machine learning algorithms using only
 * [K-NN](code/knn.py)
 * [Linear Regression](code/linear_regression.py)
 * [Logistic Regression](code/logistic_regression.py)
+* [PCA](code/pca.py)
 
 ## Running these scripts
 
@@ -26,11 +27,11 @@ Make sure `python 3` is being used by doing `python --version`
 The wizard directory contains an interactive wizard to
 run any script of your choice
 
-To run the root script:
+To run the wizard:
 
     cd Machine-Learning
     pip install -r frozen-requirements.txt
-    python wizard
+    python -m wizard
     
 ### Running scripts individually:
 The scripts can be run individually from the [/code](code/) folder

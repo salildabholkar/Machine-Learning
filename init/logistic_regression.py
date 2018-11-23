@@ -6,8 +6,8 @@ from utils.helpers import mean_squared_error, accuracy
 
 
 def logistic_regression_init():
-    X, y = make_classification(n_samples=1000,
-                               n_features=100,
+    X, y = make_classification(n_samples=5000,
+                               n_features=500,
                                n_classes=2,
                                class_sep=2.5)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
@@ -15,8 +15,8 @@ def logistic_regression_init():
     model = LogisticRegression()
     model.fit(X_train, y_train)
     predictions = model.predict(X_test)
-    print('[Logistic Regression] Accuracy (with 10000 samples):', accuracy(y_test, predictions))
-    print('[Logistic Regression] Error (with 10000 samples):', mean_squared_error(y_test, predictions))
+    print(f'[Logistic Regression] Accuracy (with {X.shape[0]} samples):', accuracy(y_test, predictions))
+    print(f'[Logistic Regression] Error (with {X.shape[0]} samples):', mean_squared_error(y_test, predictions))
 
 
 if __name__ == '__main__':

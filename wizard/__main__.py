@@ -3,6 +3,7 @@ from init.naive_bayes import naive_bayes_init
 from init.knn import knn_init
 from init.linear_regression import linear_regression_init
 from init.logistic_regression import logistic_regression_init
+from init.pca import pca_init
 
 
 def wizard():
@@ -12,6 +13,7 @@ def wizard():
         ('K-NN', knn_init),
         ('Linear Regression', linear_regression_init),
         ('Logistic Regression', logistic_regression_init),
+        ('PCA', pca_init),
     ]
     print('--------- Menu -----------\n')
     for i, names in enumerate(algos):
