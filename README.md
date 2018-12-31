@@ -35,3 +35,6 @@ To run the wizard:
     
 ### Running scripts individually:
 The scripts can be run individually from the [/code](code/) folder
+
+## See also
+[Deep Learning projects](https://github.com/salildabholkar/Deep-Learning)
